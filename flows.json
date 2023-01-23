@@ -1,0 +1,303 @@
+[
+    {
+        "id": "4226f1659fa3c5bf",
+        "type": "tab",
+        "label": "MQTT",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "e925b7bd6141ce1c",
+        "type": "s7 in",
+        "z": "4226f1659fa3c5bf",
+        "endpoint": "87840c8453637c81",
+        "mode": "all",
+        "variable": "",
+        "diff": false,
+        "name": "1200-Lectura de datos",
+        "x": 140,
+        "y": 100,
+        "wires": [
+            [
+                "2ebb237c85b12727"
+            ]
+        ]
+    },
+    {
+        "id": "2ebb237c85b12727",
+        "type": "mqtt out",
+        "z": "4226f1659fa3c5bf",
+        "name": "",
+        "topic": "Datos",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "18f57baf28f7d6dd",
+        "x": 590,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "c78501ddfbaa9d26",
+        "type": "s7 out",
+        "z": "4226f1659fa3c5bf",
+        "endpoint": "87840c8453637c81",
+        "variable": "Activar",
+        "name": "1200-Activar",
+        "x": 670,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "f15a67e126322f23",
+        "type": "comment",
+        "z": "4226f1659fa3c5bf",
+        "name": "Enlace a video de ejemplos",
+        "info": "https://www.youtube.com/watch?v=rv5MZocBY8I",
+        "x": 720,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "58af0df683d994c5",
+        "type": "comment",
+        "z": "4226f1659fa3c5bf",
+        "name": "Activacion de marca de entrada de DB",
+        "info": "",
+        "x": 190,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "6566bfd37baef25e",
+        "type": "mqtt in",
+        "z": "4226f1659fa3c5bf",
+        "name": "",
+        "topic": "Boton",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "18f57baf28f7d6dd",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 90,
+        "y": 240,
+        "wires": [
+            [
+                "5d6d3cd41b1e0a52"
+            ]
+        ]
+    },
+    {
+        "id": "5d6d3cd41b1e0a52",
+        "type": "change",
+        "z": "4226f1659fa3c5bf",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "True",
+                "fromt": "str",
+                "to": "true",
+                "tot": "bool"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "False",
+                "fromt": "str",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 240,
+        "wires": [
+            [
+                "c78501ddfbaa9d26",
+                "c2074c8ad27b81cb"
+            ]
+        ]
+    },
+    {
+        "id": "c2074c8ad27b81cb",
+        "type": "debug",
+        "z": "4226f1659fa3c5bf",
+        "name": "debug 3",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "bc1357954e6b7ffd",
+        "type": "comment",
+        "z": "4226f1659fa3c5bf",
+        "name": "Lectura de datos y envio MQTT",
+        "info": "",
+        "x": 170,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "e45d85a81e4d328d",
+        "type": "s7 out",
+        "z": "4226f1659fa3c5bf",
+        "endpoint": "87840c8453637c81",
+        "variable": "Input",
+        "name": "1200-Input",
+        "x": 670,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "e4ef614b7239bd69",
+        "type": "comment",
+        "z": "4226f1659fa3c5bf",
+        "name": "Enlace a video de ejemplos",
+        "info": "https://www.youtube.com/watch?v=rv5MZocBY8I",
+        "x": 720,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "ec6037b5dc032991",
+        "type": "comment",
+        "z": "4226f1659fa3c5bf",
+        "name": "Cambio de valor en variable",
+        "info": "",
+        "x": 160,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "25644b4bcdae3044",
+        "type": "mqtt in",
+        "z": "4226f1659fa3c5bf",
+        "name": "",
+        "topic": "Input",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "18f57baf28f7d6dd",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 90,
+        "y": 420,
+        "wires": [
+            [
+                "e45d85a81e4d328d",
+                "776f96cde2c23c0b"
+            ]
+        ]
+    },
+    {
+        "id": "776f96cde2c23c0b",
+        "type": "debug",
+        "z": "4226f1659fa3c5bf",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "87840c8453637c81",
+        "type": "s7 endpoint",
+        "transport": "iso-on-tcp",
+        "address": "192.168.0.30",
+        "port": "102",
+        "rack": "0",
+        "slot": "1",
+        "localtsaphi": "01",
+        "localtsaplo": "00",
+        "remotetsaphi": "01",
+        "remotetsaplo": "00",
+        "connmode": "rack-slot",
+        "adapter": "",
+        "busaddr": "2",
+        "cycletime": "500",
+        "timeout": "1000",
+        "name": "ComS7",
+        "vartable": [
+            {
+                "addr": "DB1,X6.1",
+                "name": "Activar"
+            },
+            {
+                "addr": "DB1,X6.0",
+                "name": "Salida"
+            },
+            {
+                "addr": "DB1,R0",
+                "name": "Real"
+            },
+            {
+                "addr": "DB1,I4",
+                "name": "Entero"
+            },
+            {
+                "addr": "DB1,R8",
+                "name": "Input"
+            },
+            {
+                "addr": "DB1,R12",
+                "name": "Output"
+            }
+        ]
+    },
+    {
+        "id": "18f57baf28f7d6dd",
+        "type": "mqtt-broker",
+        "name": "mqtt",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "Datos",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "Conexión establecida.",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "Cerrando conexión.",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "Error en la conexión. Desconectado.",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    }
+]
