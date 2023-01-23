@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sarsim</title>
+    <script type="text/javascript" src="/eel.js"></script>
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
+    <script type="text/javascript" src="/static/js/funciones.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <!-- Parte de la Sidebar -->
+    <div class="offcanvas offcanvas-start" id="demo">
+        <div class="offcanvas-header">
+            <h1 class="offcanvas-title">Sidebar</h1>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <a href="" class="bar-item text-body">Inicio</a>
+        </div>
+    </div>
+    <!-- Boton que abre la Sidebar -->
+    <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">&#9776;</button>
+    <!-- Tabla de visualización de datos -->
+    <div class="container-md my-3">
+        <h1 id="titulo">Datos y activación en tiempo real</h1>
+        <table class="table table-dark table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Estado</th>
+                    <th>Contador 1</th>
+                    <th>Contador 2</th>
+                    <th>Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="estado"></td>
+                    <td id="contador1"></td>
+                    <td id="contador2"></td>
+                    <td id="output"></td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- Tabla de botones -->
+        <h1 id="titulo">Botones de activación</h1>
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th class="text-center">Activar</th>
+                    <th class="text-center">Desactivar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-center"><button btn class="btn btn-outline-light" onclick="activarjs()">Click para
+                            activar</button></td>
+                    <td class="text-center"><button btn class="btn btn-outline-light" onclick="desactivarjs()">Click
+                            para desactivar</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <h1 id="titulo">Entrada de variable real</h1>
+        <input type="text" id="input">
+        <input type="button" class="btn btn-dark" value="Submit" onclick="input()"></br>
+    </div>
+    <!-- Warning de la parte inferior -->
+    <div class="alert alert-warning">
+        <strong>Warning!</strong> Las entradas realizan cambios de estado reales en el PLC.
+    </div>
+
+</body>
+
+</html>
